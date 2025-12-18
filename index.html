@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PKL - Stematel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Montserrat", sans-serif;
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: #1e40af;
+        transition: width 0.3s;
+      }
+      .nav-link:hover:after {
+        width: 100%;
+      }
+      .gradient-overlay {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 64, 175, 0.9),
+          rgba(30, 58, 138, 0.8)
+        );
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex items-center space-x-3">
+            <div
+              class="bg-blue-900 text-white font-bold text-4xl px-4 py-3 rounded-lg flex items-center justify-center w-16 h-16"
+            >
+              <img
+                src="/img/ts-wh.png"
+                alt="Logo E-PKL"
+                class="w-10 h-10 object-contain"
+              />
+            </div>
+            <div class="flex flex-col">
+              <h1
+                class="text-xl lg:text-2xl font-bold text-blue-900 leading-tight"
+              >
+                E-PKL STEMATEL
+              </h1>
+              <p class="text-xs lg:text-sm text-gray-600">
+                Sistem Praktik Kerja Lapangan
+              </p>
+            </div>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#beranda"
+              class="nav-link text-gray-700 py-2 hover:text-blue-900 font-medium"
+              >Beranda</a
+            >
+            <a
+              href="#tentang"
+              class="nav-link text-gray-700 py-2 hover:text-blue-900 font-medium"
+              >Tentang</a
+            >
+            <a
+              href="#mitra"
+              class="nav-link text-gray-700 py-2 hover:text-blue-900 font-medium"
+              >Mitra</a
+            >
+            <a
+              href="#daftar"
+              class="nav-link text-gray-700 py-2 hover:text-blue-900 font-medium"
+              >Daftar</a
+            >
+            <a
+              href="#faq"
+              class="nav-link text-gray-700 py-2 hover:text-blue-900 font-medium"
+              >FAQ</a
+            >
+            <a
+              href="#masuk"
+              class="bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition font-medium"
+              >Masuk</a
+            >
+          </div>
+          <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div class="px-4 py-4 space-y-3">
+          <a
+            href="#beranda"
+            class="block text-gray-700 hover:text-blue-900 font-medium"
+            >Beranda</a
+          >
+          <a
+            href="#tentang"
+            class="block text-gray-700 hover:text-blue-900 font-medium"
+            >Tentang</a
+          >
+          <a
+            href="#mitra"
+            class="block text-gray-700 hover:text-blue-900 font-medium"
+            >Mitra</a
+          >
+          <a
+            href="#daftar"
+            class="block text-gray-700 hover:text-blue-900 font-medium"
+            >Daftar</a
+          >
+          <a
+            href="#faq"
+            class="block text-gray-700 hover:text-blue-900 font-medium"
+            >FAQ</a
+          >
+          <a
+            href="#masuk"
+            class="block bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition font-medium text-center"
+            >Masuk</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="beranda"
+      class="pt-20 min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-white"
+    >
+      <div class="container mx-auto px-4 lg:px-8 py-16">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <div class="gradient-overlay absolute inset-0 rounded-2xl"></div>
+            <img
+              src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=600&fit=crop"
+              alt="Sekolah"
+              class="rounded-2xl shadow-2xl w-full h-96 object-cover"
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-white text-center flex flex-col items-center">
+                <img
+                  src="/img/stematel-wh.png"
+                  alt="Logo Sekolah"
+                  class="w-64 mb-3"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <h1 class="text-4xl lg:text-5xl font-bold text-blue-900 mb-6">
+              Praktik Kerja Lapangan
+            </h1>
+            <p class="text-gray-600 text-lg mb-8">
+              Platform terpadu untuk mengelola Praktik Kerja Lapangan dengan
+              mudah dan efesien. Hubungkan siswa, dunia usaha, dan guru
+              pembimbing dalam satu sistem yang terintegrasi.
+            </p>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="text-3xl font-bold text-blue-900">8</div>
+                <div class="text-gray-600 mt-2">Jurusan</div>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="text-3xl font-bold text-blue-900">1.200</div>
+                <div class="text-gray-600 mt-2">Peserta Didik</div>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="text-3xl font-bold text-blue-900">150</div>
+                <div class="text-gray-600 mt-2">Perusahaan</div>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="text-3xl font-bold text-blue-900">25</div>
+                <div class="text-gray-600 mt-2">Kota</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeri Slider -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <h2
+          class="text-3xl lg:text-4xl font-bold text-center text-blue-900 mb-12"
+        >
+          Galeri Kegiatan
+        </h2>
+        <div class="relative max-w-6xl mx-auto">
+          <div class="overflow-hidden rounded-2xl shadow-2xl">
+            <div id="slider" class="flex transition-transform duration-500">
+              <img
+                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&h=600&fit=crop"
+                alt="Galeri 1"
+                class="w-full h-96 object-cover flex-shrink-0"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=600&fit=crop"
+                alt="Galeri 2"
+                class="w-full h-96 object-cover flex-shrink-0"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop"
+                alt="Galeri 3"
+                class="w-full h-96 object-cover flex-shrink-0"
+              />
+            </div>
+          </div>
+          <button
+            onclick="prevSlide()"
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition"
+          >
+            <svg
+              class="w-6 h-6 text-blue-900"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+          <button
+            onclick="nextSlide()"
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition"
+          >
+            <svg
+              class="w-6 h-6 text-blue-900"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+          <div class="flex justify-center mt-6 space-x-2">
+            <div
+              class="dot w-3 h-3 rounded-full bg-blue-900 cursor-pointer"
+              onclick="goToSlide(0)"
+            ></div>
+            <div
+              class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer"
+              onclick="goToSlide(1)"
+            ></div>
+            <div
+              class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer"
+              onclick="goToSlide(2)"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section
+      id="tentang"
+      class="py-32 bg-gradient-to-br from-blue-900 to-blue-800 text-white"
+    >
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">
+            Tentang Praktik Kerja Lapangan
+          </h2>
+          <div class="space-y-6 text-lg">
+            <p class="leading-relaxed">
+              Praktik Kerja Lapangan (PKL) adalah kegiatan pendidikan yang
+              memberikan pengalaman kerja langsung kepada siswa di dunia
+              industri. Program ini bertujuan untuk membekali siswa dengan
+              keterampilan praktis dan pemahaman mendalam tentang dunia kerja
+              profesional.
+            </p>
+            <p class="leading-relaxed">
+              Melalui PKL, siswa dapat mengaplikasikan teori yang telah
+              dipelajari di sekolah ke dalam praktik nyata, mengembangkan soft
+              skills, dan membangun jaringan profesional yang akan sangat
+              bermanfaat untuk karir mereka di masa depan.
+            </p>
+            <p class="leading-relaxed">
+              Platform kami menyediakan sistem terintegrasi untuk memudahkan
+              proses pendaftaran, monitoring, dan evaluasi kegiatan PKL,
+              sehingga siswa, sekolah, dan perusahaan dapat berkolaborasi dengan
+              lebih efektif dan efisien.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daftar Perusahaan -->
+    <section id="mitra" class="py-32 bg-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <h2
+          class="text-3xl lg:text-4xl font-bold text-center text-blue-900 mb-12"
+        >
+          Perusahaan Mitra
+        </h2>
+        <div class="overflow-x-auto shadow-xl rounded-lg">
+          <table class="w-full bg-white">
+            <thead class="bg-blue-900 text-white">
+              <tr>
+                <th class="px-6 py-4 text-left font-semibold">No</th>
+                <th class="px-6 py-4 text-left font-semibold">
+                  Nama Perusahaan
+                </th>
+                <th class="px-6 py-4 text-left font-semibold">Bidang Usaha</th>
+                <th class="px-6 py-4 text-left font-semibold">Kota</th>
+                <th class="px-6 py-4 text-left font-semibold">Kuota</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="hover:bg-blue-50 transition">
+                <td class="px-6 py-4">1</td>
+                <td class="px-6 py-4 font-medium">PT Teknologi Maju</td>
+                <td class="px-6 py-4">Teknologi Informasi</td>
+                <td class="px-6 py-4">Jakarta</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                    >15 Siswa</span
+                  >
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition">
+                <td class="px-6 py-4">2</td>
+                <td class="px-6 py-4 font-medium">CV Kreatif Indonesia</td>
+                <td class="px-6 py-4">Desain Grafis</td>
+                <td class="px-6 py-4">Bandung</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                    >10 Siswa</span
+                  >
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition">
+                <td class="px-6 py-4">3</td>
+                <td class="px-6 py-4 font-medium">PT Industri Manufaktur</td>
+                <td class="px-6 py-4">Manufaktur</td>
+                <td class="px-6 py-4">Surabaya</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                    >20 Siswa</span
+                  >
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition">
+                <td class="px-6 py-4">4</td>
+                <td class="px-6 py-4 font-medium">Hotel Grand Nusantara</td>
+                <td class="px-6 py-4">Perhotelan</td>
+                <td class="px-6 py-4">Yogyakarta</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                    >12 Siswa</span
+                  >
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition">
+                <td class="px-6 py-4">5</td>
+                <td class="px-6 py-4 font-medium">PT Media Digital</td>
+                <td class="px-6 py-4">Media & Broadcasting</td>
+                <td class="px-6 py-4">Semarang</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                    >8 Siswa</span
+                  >
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50 transition">
+                <td class="px-6 py-4">6</td>
+                <td class="px-6 py-4 font-medium">
+                  PT Solusi Digital Nusantara
+                </td>
+                <td class="px-6 py-4">Software Development</td>
+                <td class="px-6 py-4">Malang</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                  >
+                    18 Siswa
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-blue-50 transition">
+                <td class="px-6 py-4">7</td>
+                <td class="px-6 py-4 font-medium">CV Jaya Abadi</td>
+                <td class="px-6 py-4">Administrasi Perkantoran</td>
+                <td class="px-6 py-4">Solo</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                  >
+                    6 Siswa
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-blue-50 transition">
+                <td class="px-6 py-4">8</td>
+                <td class="px-6 py-4 font-medium">PT Logistik Sejahtera</td>
+                <td class="px-6 py-4">Logistik & Transportasi</td>
+                <td class="px-6 py-4">Bekasi</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                  >
+                    14 Siswa
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-blue-50 transition">
+                <td class="px-6 py-4">9</td>
+                <td class="px-6 py-4 font-medium">PT Agro Mandiri</td>
+                <td class="px-6 py-4">Pertanian & Agribisnis</td>
+                <td class="px-6 py-4">Bogor</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                  >
+                    10 Siswa
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-blue-50 transition">
+                <td class="px-6 py-4">10</td>
+                <td class="px-6 py-4 font-medium">PT Edukasi Cerdas</td>
+                <td class="px-6 py-4">Pendidikan</td>
+                <td class="px-6 py-4">Depok</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                  >
+                    9 Siswa
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center mt-8">
+          <button
+            class="bg-blue-900 text-white px-8 py-3 rounded-lg hover:bg-blue-800 transition font-medium shadow-lg transform hover:scale-105"
+          >
+            Lihat Selengkapnya
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Daftar -->
+    <section
+      id="daftar"
+      class="py-32 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900"
+    >
+      <div class="container mx-auto px-4 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-5xl font-bold text-white mb-6">
+          Siap Memulai PKL?
+        </h2>
+        <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+          Daftarkan diri Anda sekarang dan dapatkan pengalaman kerja yang
+          berharga untuk masa depan karir Anda!
+        </p>
+        <a
+          href="#masuk"
+          class="inline-block bg-white text-blue-900 px-10 py-4 rounded-lg text-lg font-bold hover:bg-blue-50 transition shadow-xl transform hover:scale-105"
+        >
+          Daftar Sekarang
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-32 bg-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <h2
+          class="text-3xl lg:text-4xl font-bold text-center text-blue-900 mb-12"
+        >
+          Frequently Asked Questions (FAQ)
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-4">
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              onclick="toggleFaq(1)"
+              class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition flex justify-between items-center"
+            >
+              <span class="font-semibold text-gray-800"
+                >Berapa lama durasi PKL?</span
+              >
+              <svg
+                class="w-5 h-5 transform transition faq-icon-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="faq-1" class="hidden px-6 py-4 bg-gray-50 text-gray-600">
+              Durasi PKL umumnya berlangsung selama 3-6 bulan, tergantung pada
+              kebijakan sekolah dan kesepakatan dengan perusahaan mitra.
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              onclick="toggleFaq(2)"
+              class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition flex justify-between items-center"
+            >
+              <span class="font-semibold text-gray-800"
+                >Apa saja persyaratan untuk mengikuti PKL?</span
+              >
+              <svg
+                class="w-5 h-5 transform transition faq-icon-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="faq-2" class="hidden px-6 py-4 bg-gray-50 text-gray-600">
+              Persyaratan meliputi: status sebagai siswa aktif, telah
+              menyelesaikan mata pelajaran tertentu, memiliki nilai akademik
+              minimal, dan mendapat persetujuan dari orang tua/wali.
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              onclick="toggleFaq(3)"
+              class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition flex justify-between items-center"
+            >
+              <span class="font-semibold text-gray-800"
+                >Apakah siswa mendapat bimbingan selama PKL?</span
+              >
+              <svg
+                class="w-5 h-5 transform transition faq-icon-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="faq-3" class="hidden px-6 py-4 bg-gray-50 text-gray-600">
+              Ya, setiap siswa akan mendapat bimbingan dari pembimbing sekolah
+              dan mentor dari perusahaan yang akan memantau dan membimbing
+              selama kegiatan PKL berlangsung.
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              onclick="toggleFaq(4)"
+              class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition flex justify-between items-center"
+            >
+              <span class="font-semibold text-gray-800"
+                >Bagaimana cara memilih perusahaan untuk PKL?</span
+              >
+              <svg
+                class="w-5 h-5 transform transition faq-icon-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="faq-4" class="hidden px-6 py-4 bg-gray-50 text-gray-600">
+              Siswa dapat memilih perusahaan sesuai dengan jurusan dan minat
+              mereka melalui platform kami. Pilihan perusahaan disesuaikan
+              dengan ketersediaan kuota dan relevansi dengan kompetensi yang
+              ingin dikembangkan.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <!-- Brand -->
+          <div>
+            <h3 class="text-2xl font-bold mb-4">E-PKL STEMATEL</h3>
+            <p class="text-blue-200">
+              Sistem terintegrasi yang mempermudah pengelolaan Praktik Kerja
+              Lapangan dengan menghubungkan siswa, dunia usaha, dan guru
+              pembimbing secara efisien.
+            </p>
+          </div>
+
+          <!-- Kontak -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+            <ul class="space-y-2 text-blue-200">
+              <li>Email: info@pkl.sch.id</li>
+              <li>Telepon: (021) 1234-5678</li>
+              <li>Alamat: Jl. Pendidikan No. 123</li>
+            </ul>
+          </div>
+
+          <!-- Menu -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Menu</h4>
+            <ul class="space-y-2 text-blue-200">
+              <li>
+                <a href="#beranda" class="hover:text-white transition"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a href="#tentang" class="hover:text-white transition"
+                  >Tentang</a
+                >
+              </li>
+              <li>
+                <a href="#mitra" class="hover:text-white transition">Mitra</a>
+              </li>
+              <li>
+                <a href="#daftar" class="hover:text-white transition">Daftar</a>
+              </li>
+              <li>
+                <a href="#faq" class="hover:text-white transition">FAQ</a>
+              </li>
+              <li>
+                <a href="#masuk" class="hover:text-white transition">Masuk</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Media Sosial -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Media Sosial</h4>
+            <div class="flex space-x-4">
+              <!-- Instagram -->
+              <a href="#" class="text-blue-200 hover:text-white transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"
+                  />
+                </svg>
+              </a>
+
+              <!-- YouTube -->
+              <a href="#" class="text-blue-200 hover:text-white transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.5 6.2s-.2-1.7-.8-2.4c-.8-.8-1.7-.8-2.1-.9C17.7 2.5 12 2.5 12 2.5h0s-5.7 0-8.6.4c-.4.1-1.3.1-2.1.9-.6.7-.8 2.4-.8 2.4S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.7.8 2.4c.8.8 1.9.8 2.4.9 1.7.2 7.3.4 7.3.4s5.7 0 8.6-.4c.4-.1 1.3-.1 2.1-.9.6-.7.8-2.4.8-2.4s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8zM9.5 14.5v-5l5.2 2.5-5.2 2.5z"
+                  />
+                </svg>
+              </a>
+
+              <!-- TikTok -->
+              <a href="#" class="text-blue-200 hover:text-white transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12.7 2h2.1c.3 2 1.8 3.6 3.8 3.9v2.2c-1.5-.1-2.9-.6-4-1.5v6.7a5.4 5.4 0 11-5.4-5.4c.4 0 .8 0 1.2.1v2.3a2.9 2.9 0 10 2.3 2.8V2z"
+                  />
+                </svg>
+              </a>
+
+              <!-- Facebook -->
+              <a href="#" class="text-blue-200 hover:text-white transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M22.7 0H1.3C.6 0 0 .6 0 1.3v21.4C0 23.4.6 24 1.3 24H12v-9.3H9.2V11h2.8V8.4c0-2.8 1.7-4.3 4.2-4.3 1.2 0 2.2.1 2.5.1v2.9h-1.7c-1.3 0-1.6.6-1.6 1.6V11h3.2l-.4 3.7h-2.8V24h5.5c.7 0 1.3-.6 1.3-1.3V1.3C24 .6 23.4 0 22.7 0z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-blue-800 pt-8 text-center text-blue-200">
+          <p>&copy; 2025 PKL - Praktik Kerja Lapangan. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let currentSlide = 0;
+      let autoSlideInterval;
+
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+
+      function updateSlider() {
+        const slider = document.getElementById("slider");
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+        const dots = document.querySelectorAll(".dot");
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.remove("bg-gray-300");
+            dot.classList.add("bg-blue-900");
+          } else {
+            dot.classList.remove("bg-blue-900");
+            dot.classList.add("bg-gray-300");
+          }
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % 3;
+        updateSlider();
+        resetAutoSlide();
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + 3) % 3;
+        updateSlider();
+        resetAutoSlide();
+      }
+
+      function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+        resetAutoSlide();
+      }
+
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 4000);
+      }
+
+      function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+      }
+
+      function toggleFaq(num) {
+        const faq = document.getElementById(`faq-${num}`);
+        const icon = document.querySelector(`.faq-icon-${num}`);
+        faq.classList.toggle("hidden");
+        icon.classList.toggle("rotate-180");
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+
+      startAutoSlide();
+    </script>
+  </body>
+</html>
